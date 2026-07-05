@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Executive Assistant Services</title>
-    <style>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Executive Assistant Services</title>
+<style>
       * {
         box-sizing: border-box;
       }
@@ -425,694 +426,546 @@
           display: none;
         }
       }
-    </style>
-  </head>
-  <body>
-    <div class="page-tools" aria-label="Page tools">
-      <span class="save-status" id="saveStatus" aria-live="polite"
-        >Saved locally</span
-      >
-      <button class="tool-button" id="resetPage" type="button">Reset</button>
-      <button class="tool-button" id="importData" type="button">Import</button>
-      <button class="tool-button" id="exportData" type="button">
+    
+
+      .delete-button {
+        position: absolute;
+        top: 8px;
+        right: 58px;
+        z-index: 2;
+        padding: 5px 8px;
+        border: 1px solid #d6d3cb;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.96);
+        color: #7f1d1d;
+        font: inherit;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-3px);
+        transition: opacity 0.15s, transform 0.15s, background 0.15s;
+      }
+
+      .card:hover > .delete-button,
+      .card:focus-within > .delete-button,
+      .section:hover > .delete-button,
+      .section:focus-within > .delete-button,
+      .addon-box:hover > .delete-button,
+      .addon-box:focus-within > .delete-button,
+      .service-panel:hover > .delete-button,
+      .service-panel:focus-within > .delete-button {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .delete-button:hover,
+      .delete-button:focus-visible {
+        background: #fee2e2;
+        outline: 2px solid #991b1b;
+        outline-offset: 1px;
+      }
+
+      @media print {
+        .delete-button {
+          display: none;
+        }
+      }
+</style>
+</head>
+<body>
+<div aria-label="Page tools" class="page-tools">
+<span aria-live="polite" class="save-status" id="saveStatus">Saved locally</span><button class="tool-button" id="addPlanCard" type="button">Add plan</button><button class="tool-button" id="addServiceCard" type="button">Add service</button>
+<button class="tool-button" id="resetPage" type="button">Reset</button>
+<button class="tool-button" id="importData" type="button">Import</button>
+<button class="tool-button" id="exportData" type="button">
         Export data
       </button>
-      <button class="tool-button" id="exportPng" type="button">PNG</button>
-      <button class="tool-button" id="exportJpeg" type="button">JPEG</button>
-      <input id="dataFile" type="file" accept="application/json,.json" hidden />
-    </div>
-    <main class="page">
-      <header>
-        <h1 contenteditable="true">Executive Assistant Services</h1>
-        <p class="subtitle" contenteditable="true">
+<button class="tool-button" id="exportPng" type="button">PNG</button>
+<button class="tool-button" id="exportJpeg" type="button">JPEG</button>
+<input accept="application/json,.json" hidden="" id="dataFile" type="file"/>
+</div>
+<main class="page">
+<header>
+<h1 contenteditable="true">Executive Assistant Services</h1>
+<p class="subtitle" contenteditable="true">
           Simple support to help you stay organized, save time, and run your
           business with less stress.
         </p>
-      </header>
-
-      <h2 class="plan-heading">Monthly Support Plans</h2>
-      <section class="grid">
-        <div class="card">
-          <h2 contenteditable="true">Essential Support</h2>
-          <p class="price" contenteditable="true">
-            $199/month<br /><span class="annual"
-              >or $179/month when paid yearly</span
-            >
-          </p>
-          <p class="hours" contenteditable="true">
-            Up to 5 support hours monthly
-          </p>
-          <p class="small-title" contenteditable="true">Includes:</p>
-          <ul contenteditable="true">
-            <li>Calendar management</li>
-            <li>Appointment scheduling</li>
-            <li>Email organization</li>
-            <li>Task tracking</li>
-            <li>Monthly planning call</li>
-            <li>Client follow-ups</li>
-            <li>Basic document creation</li>
-          </ul>
-          <p class="small-title" contenteditable="true">Best for:</p>
-          <ul contenteditable="true">
-            <li>Business owners who need light, reliable support.</li>
-          </ul>
-        </div>
-
-        <div class="card popular">
-          <div class="tag" contenteditable="true">Most Popular</div>
-          <h2 contenteditable="true">Business Support</h2>
-          <p class="price" contenteditable="true">
-            $399/month<br /><span class="annual"
-              >or $349/month when paid yearly</span
-            >
-          </p>
-          <p class="hours" contenteditable="true">
-            Up to 12 support hours monthly
-          </p>
-          <p class="small-title" contenteditable="true">
+</header>
+<h2 class="plan-heading">Monthly Support Plans</h2>
+<section class="grid">
+<div class="card">
+<h2 contenteditable="true">Essential Support</h2>
+<p class="price" contenteditable="true">
+            $749/month<br/><span class="annual">or $649/month when paid yearly</span>
+</p>
+<p class="hours" contenteditable="true">
+            New Client Package - $449/month for the first month</p>
+<p class="small-title" contenteditable="true">Includes:</p>
+<ul contenteditable="true">
+<li>Meeting, Calendar, &amp; Appointment Coordination</li><li>Inbox Organization &amp; Draft Email Responses</li><li>Client / Customer Contact Management</li><li>Follow-Up &amp; Scheduling Reminders</li>
+</ul>
+<p class="small-title" contenteditable="true">This package also includes:</p>
+<ul contenteditable="true">
+<li>1 Monthly Strategy Call</li><li>Includes up to 15 hours of extra support / month</li>
+</ul>
+</div>
+<div class="card popular">
+<div class="tag" contenteditable="true">Most Popular</div>
+<h2 contenteditable="true">Client Operations Support</h2>
+<p class="price" contenteditable="true">
+            $1,249/month<br/><span class="annual">or $1,149/month when paid yearly</span>
+</p>
+<p class="hours" contenteditable="true">New Client Package - $649/month for the first month<br/></p>
+<p class="small-title" contenteditable="true">
             Includes everything in Essential, plus:
           </p>
-          <ul contenteditable="true">
-            <li>Full email management</li>
-            <li>Customer communication</li>
-            <li>Vendor communication</li>
-            <li>Weekly progress updates</li>
-            <li>Travel planning</li>
-            <li>CRM updates</li>
-            <li>Meeting preparation</li>
-            <li>Follow-up management</li>
-            <li>Monthly strategy call</li>
-          </ul>
-          <p class="small-title" contenteditable="true">Best for:</p>
-          <ul contenteditable="true">
-            <li>Business owners who want consistent support.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2 contenteditable="true">Executive Support</h2>
-          <p class="price" contenteditable="true">
-            $699/month<br /><span class="annual"
-              >or $629/month when paid yearly</span
-            >
-          </p>
-          <p class="hours" contenteditable="true">
-            Up to 25 support hours monthly
-          </p>
-          <p class="small-title" contenteditable="true">
+<ul contenteditable="true">
+<li>Full Inbox Management &amp; Email Responses</li><li><span style="font-size: clamp(13px, 1vw, 15px);">Direct Client / Customer Communication</span></li><li>Client Database Updates and CRM Maintenance</li>
+<li>Meeting Preparation &amp; Presentation Assistance</li>
+</ul>
+<p class="small-title" contenteditable="true">THIS PACKAGE ALSO INCLUDES:<br/></p>
+<ul contenteditable="true">
+<li>2 Monthly Strategy Calls</li><li>Includes up to 20 hours of extra support / month</li>
+</ul>
+</div>
+<div class="card">
+<h2 contenteditable="true">Executive Support</h2>
+<p class="price" contenteditable="true">
+            $699/month<br/><span class="annual">or $629/month when paid yearly</span>
+</p>
+<p class="hours" contenteditable="true">New Client Package - $449/month for the first month<br/></p>
+<p class="small-title" contenteditable="true">
             Includes everything in Business, plus:
           </p>
-          <ul contenteditable="true">
-            <li>Priority support</li>
-            <li>Project coordination</li>
-            <li>Team communication support</li>
-            <li>Hiring assistance</li>
-            <li>SOP creation</li>
-            <li>Invoice tracking</li>
-            <li>Workflow organization</li>
-            <li>Operations support</li>
-            <li>Two monthly strategy calls</li>
-          </ul>
-          <p class="small-title" contenteditable="true">Best for:</p>
-          <ul contenteditable="true">
-            <li>Business owners ready to delegate more.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2 contenteditable="true">Flexible Support</h2>
-          <p class="price" contenteditable="true">
-            $99/month<br /><span class="annual"
-              >or $89/month when paid yearly</span
-            >
-          </p>
-          <p class="hours" contenteditable="true">
+<ul contenteditable="true">
+<li>Priority support</li>
+<li>Project coordination</li>
+<li>Team communication support</li>
+<li>Hiring assistance</li>
+<li>SOP creation / updates</li>
+<li>Invoice tracking</li>
+<li>Workflow organization</li>
+<li>Operations support</li><li>Vendor Communication</li>
+<li>Two monthly strategy calls</li>
+</ul>
+<p class="small-title" contenteditable="true">THIS PACKAGE ALSO INCLUDES:<br/></p>
+<ul contenteditable="true">
+<li>4 Monthly Strategy Calls</li><li>Includes up to 25 hours of extra support / month</li>
+</ul>
+</div>
+<div class="card">
+<h2 contenteditable="true">Flexible Support</h2>
+<p class="price" contenteditable="true">
+            $99/month<br/><span class="annual">or $89/month when paid yearly</span>
+</p>
+<p class="hours" contenteditable="true">
             Up to 2 support hours monthly
           </p>
-          <p class="small-title" contenteditable="true">Includes:</p>
-          <ul contenteditable="true">
-            <li>Quick admin tasks</li>
-            <li>Appointment reminders</li>
-            <li>Light calendar updates</li>
-            <li>Basic task list support</li>
-            <li>Email clean-up support</li>
-          </ul>
-          <p class="small-title" contenteditable="true">Best for:</p>
-          <ul contenteditable="true">
-            <li>Clients who only need small monthly help.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="service-menu">
-        <div class="menu-heading">
-          <h2 contenteditable="true">Business Support Service Menu</h2>
-          <p contenteditable="true">
+<p class="small-title" contenteditable="true">Includes:</p>
+<ul contenteditable="true">
+<li>Quick admin tasks</li>
+<li>Appointment reminders</li>
+<li>Light calendar updates</li>
+<li>Basic task list support</li>
+<li>Email clean-up support</li>
+</ul>
+<p class="small-title" contenteditable="true">THIS PACKAGE ALSO INCLUDES:<br/></p>
+<ul contenteditable="true">
+<li>Two Monthly Strategy Calls</li><li>Includes up to 10 hours of extra support / month</li>
+</ul>
+</div>
+</section>
+<section class="service-menu">
+<div class="menu-heading">
+<h2 contenteditable="true">Business Support Service Menu</h2>
+<p contenteditable="true">
             Simple, affordable support for small business owners who need help
             organizing their client process, templates, admin systems, and
             ongoing business tasks.
           </p>
-        </div>
-
-        <div class="menu-block">
-          <h3 class="menu-section-title" contenteditable="true">
+</div>
+<div class="menu-block">
+<h3 class="menu-section-title" contenteditable="true">
             One-Time Services
           </h3>
-          <p class="menu-section-intro" contenteditable="true">
+<p class="menu-section-intro" contenteditable="true">
             Choose individual services as needed. Each listed item is priced
             separately at the amount shown for its group.
           </p>
-          <div class="menu-grid">
-            <article class="service-panel">
-              <h4 contenteditable="true">Quick Add-Ons</h4>
-              <p class="service-price" contenteditable="true">$5 per item</p>
-              <p class="service-best" contenteditable="true">
+<div class="menu-grid">
+<article class="service-panel">
+<h4 contenteditable="true">Quick Add-Ons</h4>
+<p class="service-price" contenteditable="true">$5 per item</p>
+<p class="service-best" contenteditable="true">
                 Best for small, simple updates or copy support.
               </p>
-              <ul contenteditable="true">
-                <li>Welcome Message Copy Block</li>
-                <li>Thank You Message Copy Block</li>
-                <li>Basic Template Edit</li>
-                <li>Simple Business Copy Refresh</li>
-              </ul>
-            </article>
-            <article class="service-panel">
-              <h4 contenteditable="true">Essential Templates</h4>
-              <p class="service-price" contenteditable="true">$10 per item</p>
-              <p class="service-best" contenteditable="true">
+<ul contenteditable="true">
+<li>Welcome Message Copy Block</li>
+<li>Thank You Message Copy Block</li>
+<li>Basic Template Edit</li>
+<li>Simple Business Copy Refresh</li>
+</ul>
+</article>
+<article class="service-panel">
+<h4 contenteditable="true">Essential Templates</h4>
+<p class="service-price" contenteditable="true">$10 per item</p>
+<p class="service-best" contenteditable="true">
                 Best for simple client-facing documents and everyday business
                 tools.
               </p>
-              <ul contenteditable="true">
-                <li>Branded Email Signature Setup</li>
-                <li>Invoice Template</li>
-                <li>Receipt Template</li>
-                <li>Client Welcome Email Template</li>
-                <li>Appointment Policy Confirmation Template</li>
-                <li>Client Intake Question List</li>
-                <li>Simple Client Feedback Form</li>
-                <li>Client FAQ Sheet</li>
-              </ul>
-            </article>
-            <article class="service-panel">
-              <h4 contenteditable="true">Business Setup Tools</h4>
-              <p class="service-price" contenteditable="true">$15 per item</p>
-              <p class="service-best" contenteditable="true">
+<ul contenteditable="true">
+<li>Branded Email Signature Setup</li>
+<li>Invoice Template</li>
+<li>Receipt Template</li>
+<li>Client Welcome Email Template</li>
+<li>Appointment Policy Confirmation Template</li>
+<li>Client Intake Question List</li>
+<li>Simple Client Feedback Form</li>
+<li>Client FAQ Sheet</li>
+</ul>
+</article>
+<article class="service-panel">
+<h4 contenteditable="true">Business Setup Tools</h4>
+<p class="service-price" contenteditable="true">$15 per item</p>
+<p class="service-best" contenteditable="true">
                 Best for small systems that help your business feel more
                 organized and professional.
               </p>
-              <ul contenteditable="true">
-                <li>Client Intake Form Setup</li>
-                <li>Client Welcome Packet Outline</li>
-                <li>Client Onboarding Checklist</li>
-                <li>Simple Cancellation / No-Show Policy Template</li>
-                <li>Basic Business Resource List</li>
-                <li>30-Minute Business Support Session</li>
-              </ul>
-            </article>
-            <article class="service-panel">
-              <h4 contenteditable="true">Premium Business Tools</h4>
-              <p class="service-price" contenteditable="true">$25 per item</p>
-              <p class="service-best" contenteditable="true">
+<ul contenteditable="true">
+<li>Client Intake Form Setup</li>
+<li>Client Welcome Packet Outline</li>
+<li>Client Onboarding Checklist</li>
+<li>Simple Cancellation / No-Show Policy Template</li>
+<li>Basic Business Resource List</li>
+<li>30-Minute Business Support Session</li>
+</ul>
+</article>
+<article class="service-panel">
+<h4 contenteditable="true">Premium Business Tools</h4>
+<p class="service-price" contenteditable="true">$25 per item</p>
+<p class="service-best" contenteditable="true">
                 Best for customized tools that require more planning, structure,
                 or design.
               </p>
-              <ul contenteditable="true">
-                <li>Mini Service Menu Design</li>
-                <li>Lead Tracker Setup</li>
-                <li>Basic Monthly Admin Report</li>
-                <li>Simple SOP for One Business Process</li>
-                <li>Custom Checklist</li>
-                <li>Custom Flyer</li>
-              </ul>
-            </article>
-            <article class="service-panel">
-              <h4 contenteditable="true">Custom Form Setup</h4>
-              <p class="service-price" contenteditable="true">
+<ul contenteditable="true">
+<li>Mini Service Menu Design</li>
+<li>Lead Tracker Setup</li>
+<li>Basic Monthly Admin Report</li>
+<li>Simple SOP for One Business Process</li>
+<li>Custom Checklist</li>
+<li>Custom Flyer</li>
+</ul>
+</article>
+<article class="service-panel">
+<h4 contenteditable="true">Custom Form Setup</h4>
+<p class="service-price" contenteditable="true">
                 $30 per service
               </p>
-              <p class="service-best" contenteditable="true">
+<p class="service-best" contenteditable="true">
                 Best for businesses that need a more personalized client form.
               </p>
-              <ul contenteditable="true">
-                <li>Custom Questionnaire Sent Directly to Email</li>
-              </ul>
-            </article>
-            <article class="service-panel">
-              <h4 contenteditable="true">Policy Writing</h4>
-              <p class="service-price" contenteditable="true">$50 per policy</p>
-              <p class="service-best" contenteditable="true">
+<ul contenteditable="true">
+<li>Custom Questionnaire Sent Directly to Email</li>
+</ul>
+</article>
+<article class="service-panel">
+<h4 contenteditable="true">Policy Writing</h4>
+<p class="service-price" contenteditable="true">$50 per policy</p>
+<p class="service-best" contenteditable="true">
                 Best for businesses that need a clear written policy for
                 clients.
               </p>
-              <ul contenteditable="true">
-                <li>Policy Writing</li>
-              </ul>
-              <p class="service-note" contenteditable="true">
+<ul contenteditable="true">
+<li>Policy Writing</li>
+</ul>
+<p class="service-note" contenteditable="true">
                 Note: Policy writing support is for general business
                 communication purposes. Legal accuracy should be reviewed by the
                 client or a qualified professional when needed.
               </p>
-            </article>
-          </div>
-        </div>
-
-        <div class="menu-block">
-          <h3 class="menu-section-title" contenteditable="true">
+</article>
+</div>
+</div>
+<div class="menu-block">
+<h3 class="menu-section-title" contenteditable="true">
             One-Time Service Packages
           </h3>
-          <p class="menu-section-intro" contenteditable="true">
+<p class="menu-section-intro" contenteditable="true">
             Packages include the complete group of services listed inside each
             box.
           </p>
-          <div class="menu-grid package-grid">
-            <article class="service-panel">
-              <h4 contenteditable="true">Template Starter Kit</h4>
-              <p class="service-price" contenteditable="true">$29</p>
-              <p class="service-best" contenteditable="true">
+<div class="menu-grid package-grid">
+<article class="service-panel">
+<h4 contenteditable="true">Template Starter Kit</h4>
+<p class="service-price" contenteditable="true">$29</p>
+<p class="service-best" contenteditable="true">
                 Best for businesses that need simple, polished templates to get
                 started.
               </p>
-              <p class="small-title" contenteditable="true">
+<p class="small-title" contenteditable="true">
                 Includes 3 essential templates, such as:
               </p>
-              <ul contenteditable="true">
-                <li>Invoice Template</li>
-                <li>Receipt Template</li>
-                <li>Client Welcome Email Template</li>
-                <li>Appointment Policy Confirmation Template</li>
-                <li>Client FAQ Sheet</li>
-              </ul>
-            </article>
-            <article class="service-panel">
-              <h4 contenteditable="true">Client Setup Bundle</h4>
-              <p class="service-price" contenteditable="true">$49</p>
-              <p class="service-best" contenteditable="true">
+<ul contenteditable="true">
+<li>Invoice Template</li>
+<li>Receipt Template</li>
+<li>Client Welcome Email Template</li>
+<li>Appointment Policy Confirmation Template</li>
+<li>Client FAQ Sheet</li>
+</ul>
+</article>
+<article class="service-panel">
+<h4 contenteditable="true">Client Setup Bundle</h4>
+<p class="service-price" contenteditable="true">$49</p>
+<p class="service-best" contenteditable="true">
                 Best for businesses that need a smoother client process from
                 first contact to follow-up.
               </p>
-              <p class="small-title" contenteditable="true">Includes:</p>
-              <ul contenteditable="true">
-                <li>Client Welcome Email Template</li>
-                <li>Client Intake Form Setup</li>
-                <li>Simple Client Feedback Form</li>
-                <li>Appointment Policy Confirmation Template</li>
-                <li>Client Onboarding Checklist</li>
-              </ul>
-            </article>
-            <article class="service-panel">
-              <h4 contenteditable="true">Productivity Bundle</h4>
-              <p class="service-price" contenteditable="true">$59</p>
-              <p class="service-best" contenteditable="true">
+<p class="small-title" contenteditable="true">Includes:</p>
+<ul contenteditable="true">
+<li>Client Welcome Email Template</li>
+<li>Client Intake Form Setup</li>
+<li>Simple Client Feedback Form</li>
+<li>Appointment Policy Confirmation Template</li>
+<li>Client Onboarding Checklist</li>
+</ul>
+</article>
+<article class="service-panel">
+<h4 contenteditable="true">Productivity Bundle</h4>
+<p class="service-price" contenteditable="true">$59</p>
+<p class="service-best" contenteditable="true">
                 Best for business owners who need help staying organized and
                 tracking important tasks.
               </p>
-              <p class="small-title" contenteditable="true">Includes:</p>
-              <ul contenteditable="true">
-                <li>Lead Tracker Setup</li>
-                <li>Client Onboarding Checklist</li>
-                <li>Simple SOP for One Business Process</li>
-                <li>Basic Monthly Admin Report</li>
-              </ul>
-            </article>
-            <article class="service-panel">
-              <h4 contenteditable="true">Business Bundle</h4>
-              <p class="service-price" contenteditable="true">$79</p>
-              <p class="service-best" contenteditable="true">
+<p class="small-title" contenteditable="true">Includes:</p>
+<ul contenteditable="true">
+<li>Lead Tracker Setup</li>
+<li>Client Onboarding Checklist</li>
+<li>Simple SOP for One Business Process</li>
+<li>Basic Monthly Admin Report</li>
+</ul>
+</article>
+<article class="service-panel">
+<h4 contenteditable="true">Business Bundle</h4>
+<p class="service-price" contenteditable="true">$79</p>
+<p class="service-best" contenteditable="true">
                 Best for businesses that want a more complete starter setup.
               </p>
-              <p class="small-title" contenteditable="true">Includes:</p>
-              <ul contenteditable="true">
-                <li>Branded Email Signature Setup</li>
-                <li>Invoice Template</li>
-                <li>Receipt Template</li>
-                <li>Client Welcome Email Template</li>
-                <li>Client Intake Form Setup</li>
-                <li>Client FAQ Sheet</li>
-                <li>Simple Cancellation / No-Show Policy Template</li>
-              </ul>
-            </article>
-            <article class="service-panel">
-              <h4 contenteditable="true">Business Organization Audit</h4>
-              <p class="service-price" contenteditable="true">$99</p>
-              <p class="service-best" contenteditable="true">
+<p class="small-title" contenteditable="true">Includes:</p>
+<ul contenteditable="true">
+<li>Branded Email Signature Setup</li>
+<li>Invoice Template</li>
+<li>Receipt Template</li>
+<li>Client Welcome Email Template</li>
+<li>Client Intake Form Setup</li>
+<li>Client FAQ Sheet</li>
+<li>Simple Cancellation / No-Show Policy Template</li>
+</ul>
+</article>
+<article class="service-panel">
+<h4 contenteditable="true">Business Organization Audit</h4>
+<p class="service-price" contenteditable="true">$99</p>
+<p class="service-best" contenteditable="true">
                 Best for business owners who feel overwhelmed and need help
                 identifying what to fix first.
               </p>
-              <p class="small-title" contenteditable="true">Includes:</p>
-              <ul contenteditable="true">
-                <li>Review of current business organization</li>
-                <li>Review of client process and admin flow</li>
-                <li>List of gaps, issues, or missing systems</li>
-                <li>Simple improvement plan</li>
-                <li>Recommended next steps</li>
-              </ul>
-            </article>
-            <article class="service-panel">
-              <h4 contenteditable="true">Business Systems Setup</h4>
-              <p class="service-price" contenteditable="true">
+<p class="small-title" contenteditable="true">Includes:</p>
+<ul contenteditable="true">
+<li>Review of current business organization</li>
+<li>Review of client process and admin flow</li>
+<li>List of gaps, issues, or missing systems</li>
+<li>Simple improvement plan</li>
+<li>Recommended next steps</li>
+</ul>
+</article>
+<article class="service-panel">
+<h4 contenteditable="true">Business Systems Setup</h4>
+<p class="service-price" contenteditable="true">
                 Starting at $149
               </p>
-              <p class="service-best" contenteditable="true">
+<p class="service-best" contenteditable="true">
                 Best for businesses that need hands-on setup of templates,
                 forms, trackers, and workflows.
               </p>
-              <p class="small-title" contenteditable="true">May include:</p>
-              <ul contenteditable="true">
-                <li>Client intake system</li>
-                <li>Client onboarding setup</li>
-                <li>Lead tracker setup</li>
-                <li>Basic workflow organization</li>
-                <li>Business templates</li>
-                <li>Simple SOP creation</li>
-                <li>Admin process setup</li>
-              </ul>
-              <p class="service-note" contenteditable="true">
+<p class="small-title" contenteditable="true">May include:</p>
+<ul contenteditable="true">
+<li>Client intake system</li>
+<li>Client onboarding setup</li>
+<li>Lead tracker setup</li>
+<li>Basic workflow organization</li>
+<li>Business templates</li>
+<li>Simple SOP creation</li>
+<li>Admin process setup</li>
+</ul>
+<p class="service-note" contenteditable="true">
                 Final price depends on the size and complexity of the setup.
               </p>
-            </article>
-          </div>
-        </div>
-
-        <div class="menu-block">
-          <h3 class="menu-section-title" contenteditable="true">
+</article>
+</div>
+</div>
+<div class="menu-block">
+<h3 class="menu-section-title" contenteditable="true">
             Monthly Support Add-Ons
           </h3>
-          <p class="menu-section-intro" contenteditable="true">
+<p class="menu-section-intro" contenteditable="true">
             Choose add-ons individually. Each listed add-on is billed separately
             at the monthly rate shown for its group.
           </p>
-          <div class="menu-grid monthly-grid">
-            <article class="service-panel">
-              <h4 contenteditable="true">Light Maintenance</h4>
-              <p class="service-price" contenteditable="true">
+<div class="menu-grid monthly-grid">
+<article class="service-panel">
+<h4 contenteditable="true">Light Maintenance</h4>
+<p class="service-price" contenteditable="true">
                 $10/month per add-on
               </p>
-              <p class="service-best" contenteditable="true">
+<p class="service-best" contenteditable="true">
                 Best for simple reminders, tracking, and light recurring
                 support.
               </p>
-              <ul contenteditable="true">
-                <li>Client Birthday / Anniversary Tracker with Reminders</li>
-                <li>Basic Newsletter Calendar Support</li>
-              </ul>
-            </article>
-            <article class="service-panel">
-              <h4 contenteditable="true">Admin + Marketing Support</h4>
-              <p class="service-price" contenteditable="true">
+<ul contenteditable="true">
+<li>Client Birthday / Anniversary Tracker with Reminders</li>
+<li>Basic Newsletter Calendar Support</li><li><br/></li><li>Copy Block App should be able to paste directly from keyboard on apple - good for welcome messages, thank you messages, #tags for media posts, contact information, instagram page (username), addresses</li>
+</ul>
+</article>
+<article class="service-panel">
+<h4 contenteditable="true">Admin + Marketing Support</h4>
+<p class="service-price" contenteditable="true">
                 $25/month per add-on
               </p>
-              <p class="service-best" contenteditable="true">
+<p class="service-best" contenteditable="true">
                 Best for business owners who need light monthly help staying
                 consistent.
               </p>
-              <ul contenteditable="true">
-                <li>Newsletter Support</li>
-                <li>Marketing Coordination</li>
-                <li>Event Planning Assistance</li>
-                <li>Policy / FAQ Updates</li>
-                <li>Basic Monthly Admin Report Updates</li>
-              </ul>
-              <p class="service-note" contenteditable="true">
+<ul contenteditable="true">
+<li>Newsletter Support</li>
+<li>Marketing Coordination</li>
+<li>Event Planning Assistance</li>
+<li>Policy / FAQ Updates</li>
+<li>Basic Monthly Admin Report Updates</li>
+</ul>
+<p class="service-note" contenteditable="true">
                 Note: Policy and FAQ updates are for general business
                 communication purposes. Legal accuracy should be reviewed by the
                 client or a qualified professional when needed.
               </p>
-            </article>
-            <article class="service-panel">
-              <h4 contenteditable="true">Client Support</h4>
-              <p class="service-price" contenteditable="true">
+</article>
+<article class="service-panel">
+<h4 contenteditable="true">Client Support</h4>
+<p class="service-price" contenteditable="true">
                 $50/month per add-on
               </p>
-              <p class="service-best" contenteditable="true">
+<p class="service-best" contenteditable="true">
                 Best for businesses that need help managing client communication
                 and follow-up.
               </p>
-              <ul contenteditable="true">
-                <li>Client Onboarding / Follow-Up Support</li>
-                <li>Customer Service Support</li>
-                <li>Client Management Support</li>
-                <li>Project Management Support</li>
-              </ul>
-            </article>
-            <article class="service-panel">
-              <h4 contenteditable="true">Premium Operations Support</h4>
-              <p class="service-price" contenteditable="true">
+<ul contenteditable="true">
+<li>Client Onboarding / Follow-Up Support</li>
+<li>Customer Service Support</li>
+<li>Client Management Support</li>
+<li>Project Management Support</li>
+</ul>
+</article>
+<article class="service-panel">
+<h4 contenteditable="true">Premium Operations Support</h4>
+<p class="service-price" contenteditable="true">
                 $75+/month per service
               </p>
-              <p class="service-best" contenteditable="true">
+<p class="service-best" contenteditable="true">
                 Best for businesses that need more detailed, ongoing support.
               </p>
-              <ul contenteditable="true">
-                <li>Basic Bookkeeping Organization</li>
-                <li>Sales Call Support</li>
-                <li>Ongoing Client Management</li>
-                <li>Business Operations Support</li>
-              </ul>
-              <p class="service-note" contenteditable="true">
+<ul contenteditable="true">
+<li>Basic Bookkeeping Organization</li>
+<li>Sales Call Support</li>
+<li>Ongoing Client Management</li>
+<li>Business Operations Support</li>
+</ul>
+<p class="service-note" contenteditable="true">
                 Final price depends on workload, number of clients, and level of
                 support needed.
               </p>
-            </article>
-          </div>
-        </div>
-
-        <article class="service-panel client-note">
-          <h4 contenteditable="true">Suggested Note for Clients</h4>
-          <p contenteditable="true">
+</article>
+</div>
+</div>
+<article class="service-panel client-note">
+<h4 contenteditable="true">Suggested Note for Clients</h4>
+<p contenteditable="true">
             All services are designed to help make your business more organized,
             professional, and easier to manage. Custom requests are available,
             and pricing may vary depending on the amount of detail, setup, or
             ongoing support needed.
           </p>
-        </article>
-      </section>
-
-      <p class="note" contenteditable="true">
+</article>
+</section>
+<p class="note" contenteditable="true">
         Tip: Click any text to edit. Click inside bullet lists and press Enter
         to add more bullet points.
       </p>
-    </main>
-    <script>
-      const storageKey = "executive-assistant-business-model-v2";
-      const editableFields = [
-        ...document.querySelectorAll('[contenteditable="true"]'),
-      ];
-      const defaultPageData = [
-        "Executive Assistant Services",
-        "\n          Simple support to help you stay organized, save time, and run your\n          business with less stress.\n        ",
-        "Essential Support",
-        '\n            $749/month<br><span class="annual">or $649/month when paid yearly</span>\n          ',
-        "\n            New Client Package - $449/month for the first month",
-        "Includes:",
-        "\n            <li>Meeting, Calendar, &amp; Appointment Coordination</li><li>Inbox Organization &amp; Draft Email Responses</li><li>Client / Customer Contact Management</li><li>Follow-Up &amp; Scheduling Reminders</li>\n          ",
-        "This package also includes:",
-        "\n            <li>1 Monthly Strategy Call</li><li>Includes up to 15 hours of extra support / month</li>\n          ",
-        "Most Popular",
-        "Client Operations Support",
-        '\n            $1,249/month<br><span class="annual">or $1,149/month when paid yearly</span>\n          ',
-        "New Client Package - $649/month for the first month<br>",
-        "\n            Includes everything in Essential, plus:\n          ",
-        '\n            <li>Full Inbox Management &amp; Email Responses</li><li><span style="font-size: clamp(13px, 1vw, 15px);">Direct Client / Customer Communication</span></li><li>Client Database Updates and CRM Maintenance</li>\n            <li>Meeting Preparation &amp; Presentation Assistance</li>\n          ',
-        "THIS PACKAGE ALSO INCLUDES:<br>",
-        "\n            <li>2 Monthly Strategy Calls</li><li>Includes up to 20 hours of extra support / month</li>\n          ",
-        "Executive Support",
-        '\n            $699/month<br><span class="annual">or $629/month when paid yearly</span>\n          ',
-        "New Client Package - $449/month for the first month<br>",
-        "\n            Includes everything in Business, plus:\n          ",
-        "\n            <li>Priority support</li>\n            <li>Project coordination</li>\n            <li>Team communication support</li>\n            <li>Hiring assistance</li>\n            <li>SOP creation / updates</li>\n            <li>Invoice tracking</li>\n            <li>Workflow organization</li>\n            <li>Operations support</li><li>Vendor Communication</li>\n            <li>Two monthly strategy calls</li>\n          ",
-        "THIS PACKAGE ALSO INCLUDES:<br>",
-        "\n            <li>4 Monthly Strategy Calls</li><li>Includes up to 25 hours of extra support / month</li>\n          ",
-        "Flexible Support",
-        '\n            $99/month<br><span class="annual">or $89/month when paid yearly</span>\n          ',
-        "\n            Up to 2 support hours monthly\n          ",
-        "Includes:",
-        "\n            <li>Quick admin tasks</li>\n            <li>Appointment reminders</li>\n            <li>Light calendar updates</li>\n            <li>Basic task list support</li>\n            <li>Email clean-up support</li>\n          ",
-        "THIS PACKAGE ALSO INCLUDES:<br>",
-        "\n            <li>Two Monthly Strategy Calls</li><li>Includes up to 10 hours of extra support / month</li>\n          ",
-        "Business Support Service Menu",
-        "\n            Simple, affordable support for small business owners who need help\n            organizing their client process, templates, admin systems, and\n            ongoing business tasks.\n          ",
-        "\n            One-Time Services\n          ",
-        "\n            Choose individual services as needed. Each listed item is priced\n            separately at the amount shown for its group.\n          ",
-        "Quick Add-Ons",
-        "$5 per item",
-        "\n                Best for small, simple updates or copy support.\n              ",
-        "\n                <li>Welcome Message Copy Block</li>\n                <li>Thank You Message Copy Block</li>\n                <li>Basic Template Edit</li>\n                <li>Simple Business Copy Refresh</li>\n              ",
-        "Essential Templates",
-        "$10 per item",
-        "\n                Best for simple client-facing documents and everyday business\n                tools.\n              ",
-        "\n                <li>Branded Email Signature Setup</li>\n                <li>Invoice Template</li>\n                <li>Receipt Template</li>\n                <li>Client Welcome Email Template</li>\n                <li>Appointment Policy Confirmation Template</li>\n                <li>Client Intake Question List</li>\n                <li>Simple Client Feedback Form</li>\n                <li>Client FAQ Sheet</li>\n              ",
-        "Business Setup Tools",
-        "$15 per item",
-        "\n                Best for small systems that help your business feel more\n                organized and professional.\n              ",
-        "\n                <li>Client Intake Form Setup</li>\n                <li>Client Welcome Packet Outline</li>\n                <li>Client Onboarding Checklist</li>\n                <li>Simple Cancellation / No-Show Policy Template</li>\n                <li>Basic Business Resource List</li>\n                <li>30-Minute Business Support Session</li>\n              ",
-        "Premium Business Tools",
-        "$25 per item",
-        "\n                Best for customized tools that require more planning, structure,\n                or design.\n              ",
-        "\n                <li>Mini Service Menu Design</li>\n                <li>Lead Tracker Setup</li>\n                <li>Basic Monthly Admin Report</li>\n                <li>Simple SOP for One Business Process</li>\n                <li>Custom Checklist</li>\n                <li>Custom Flyer</li>\n              ",
-        "Custom Form Setup",
-        "\n                $30 per service\n              ",
-        "\n                Best for businesses that need a more personalized client form.\n              ",
-        "\n                <li>Custom Questionnaire Sent Directly to Email</li>\n              ",
-        "Policy Writing",
-        "$50 per policy",
-        "\n                Best for businesses that need a clear written policy for\n                clients.\n              ",
-        "\n                <li>Policy Writing</li>\n              ",
-        "\n                Note: Policy writing support is for general business\n                communication purposes. Legal accuracy should be reviewed by the\n                client or a qualified professional when needed.\n              ",
-        "\n            One-Time Service Packages\n          ",
-        "\n            Packages include the complete group of services listed inside each\n            box.\n          ",
-        "Template Starter Kit",
-        "$29",
-        "\n                Best for businesses that need simple, polished templates to get\n                started.\n              ",
-        "\n                Includes 3 essential templates, such as:\n              ",
-        "\n                <li>Invoice Template</li>\n                <li>Receipt Template</li>\n                <li>Client Welcome Email Template</li>\n                <li>Appointment Policy Confirmation Template</li>\n                <li>Client FAQ Sheet</li>\n              ",
-        "Client Setup Bundle",
-        "$49",
-        "\n                Best for businesses that need a smoother client process from\n                first contact to follow-up.\n              ",
-        "Includes:",
-        "\n                <li>Client Welcome Email Template</li>\n                <li>Client Intake Form Setup</li>\n                <li>Simple Client Feedback Form</li>\n                <li>Appointment Policy Confirmation Template</li>\n                <li>Client Onboarding Checklist</li>\n              ",
-        "Productivity Bundle",
-        "$59",
-        "\n                Best for business owners who need help staying organized and\n                tracking important tasks.\n              ",
-        "Includes:",
-        "\n                <li>Lead Tracker Setup</li>\n                <li>Client Onboarding Checklist</li>\n                <li>Simple SOP for One Business Process</li>\n                <li>Basic Monthly Admin Report</li>\n              ",
-        "Business Bundle",
-        "$79",
-        "\n                Best for businesses that want a more complete starter setup.\n              ",
-        "Includes:",
-        "\n                <li>Branded Email Signature Setup</li>\n                <li>Invoice Template</li>\n                <li>Receipt Template</li>\n                <li>Client Welcome Email Template</li>\n                <li>Client Intake Form Setup</li>\n                <li>Client FAQ Sheet</li>\n                <li>Simple Cancellation / No-Show Policy Template</li>\n              ",
-        "Business Organization Audit",
-        "$99",
-        "\n                Best for business owners who feel overwhelmed and need help\n                identifying what to fix first.\n              ",
-        "Includes:",
-        "\n                <li>Review of current business organization</li>\n                <li>Review of client process and admin flow</li>\n                <li>List of gaps, issues, or missing systems</li>\n                <li>Simple improvement plan</li>\n                <li>Recommended next steps</li>\n              ",
-        "Business Systems Setup",
-        "\n                Starting at $149\n              ",
-        "\n                Best for businesses that need hands-on setup of templates,\n                forms, trackers, and workflows.\n              ",
-        "May include:",
-        "\n                <li>Client intake system</li>\n                <li>Client onboarding setup</li>\n                <li>Lead tracker setup</li>\n                <li>Basic workflow organization</li>\n                <li>Business templates</li>\n                <li>Simple SOP creation</li>\n                <li>Admin process setup</li>\n              ",
-        "\n                Final price depends on the size and complexity of the setup.\n              ",
-        "\n            Monthly Support Add-Ons\n          ",
-        "\n            Choose add-ons individually. Each listed add-on is billed separately\n            at the monthly rate shown for its group.\n          ",
-        "Light Maintenance",
-        "\n                $10/month per add-on\n              ",
-        "\n                Best for simple reminders, tracking, and light recurring\n                support.\n              ",
-        "\n                <li>Client Birthday / Anniversary Tracker with Reminders</li>\n                <li>Basic Newsletter Calendar Support</li><li><br></li><li>Copy Block App should be able to paste directly from keyboard on apple - good for welcome messages, thank you messages, #tags for media posts, contact information, instagram page (username), addresses</li>\n              ",
-        "Admin + Marketing Support",
-        "\n                $25/month per add-on\n              ",
-        "\n                Best for business owners who need light monthly help staying\n                consistent.\n              ",
-        "\n                <li>Newsletter Support</li>\n                <li>Marketing Coordination</li>\n                <li>Event Planning Assistance</li>\n                <li>Policy / FAQ Updates</li>\n                <li>Basic Monthly Admin Report Updates</li>\n              ",
-        "\n                Note: Policy and FAQ updates are for general business\n                communication purposes. Legal accuracy should be reviewed by the\n                client or a qualified professional when needed.\n              ",
-        "Client Support",
-        "\n                $50/month per add-on\n              ",
-        "\n                Best for businesses that need help managing client communication\n                and follow-up.\n              ",
-        "\n                <li>Client Onboarding / Follow-Up Support</li>\n                <li>Customer Service Support</li>\n                <li>Client Management Support</li>\n                <li>Project Management Support</li>\n              ",
-        "Premium Operations Support",
-        "\n                $75+/month per service\n              ",
-        "\n                Best for businesses that need more detailed, ongoing support.\n              ",
-        "\n                <li>Basic Bookkeeping Organization</li>\n                <li>Sales Call Support</li>\n                <li>Ongoing Client Management</li>\n                <li>Business Operations Support</li>\n              ",
-        "\n                Final price depends on workload, number of clients, and level of\n                support needed.\n              ",
-        "Suggested Note for Clients",
-        "\n            All services are designed to help make your business more organized,\n            professional, and easier to manage. Custom requests are available,\n            and pricing may vary depending on the amount of detail, setup, or\n            ongoing support needed.\n          ",
-        "\n        Tip: Click any text to edit. Click inside bullet lists and press Enter\n        to add more bullet points.\n      ",
-      ];
+</main>
+<script>
+
+      const storageKey = "executive-assistant-services-editable-v3";
       const saveStatus = document.getElementById("saveStatus");
+      const page = document.querySelector(".page");
+      const defaultPageHtml = page.innerHTML;
+
+      function setStatus(message) {
+        if (saveStatus) saveStatus.textContent = message;
+      }
+
+      function cleanPageClone() {
+        const clone = page.cloneNode(true);
+        clone.querySelectorAll(".copy-button, .delete-button").forEach((item) => item.remove());
+        return clone;
+      }
 
       function getPageData() {
-        return editableFields.map((field) => field.innerHTML);
+        return {
+          version: 3,
+          savedAt: new Date().toISOString(),
+          html: cleanPageClone().innerHTML,
+        };
       }
 
       function savePage() {
         try {
           localStorage.setItem(storageKey, JSON.stringify(getPageData()));
-          saveStatus.textContent = "Saved locally";
+          setStatus("Saved locally");
         } catch {
-          saveStatus.textContent = "Could not save";
+          setStatus("Could not save");
         }
       }
 
       function restorePage(data) {
-        if (!Array.isArray(data)) return false;
+        if (data && typeof data.html === "string") {
+          page.innerHTML = data.html;
+          enhanceEditablePage();
+          savePage();
+          return true;
+        }
 
-        const menuStart = editableFields.indexOf(
-          document.querySelector('.service-menu [contenteditable="true"]'),
-        );
-
-        if (data.length === editableFields.length + 8) {
-          const oldIndividualPrices = new Set([
-            "$5",
-            "$10",
-            "$15",
-            "$25",
-            "$30",
-            "$50",
-            "$10/month",
-            "$25/month",
-            "$50/month",
-            "$75+/month",
-          ]);
-          let newFieldsSeen = 0;
-
-          editableFields.forEach((field, index) => {
-            if (field.classList.contains("menu-section-intro")) {
-              newFieldsSeen += 1;
-              return;
-            }
-
-            const oldIndex =
-              index < menuStart ? index : index + 11 - newFieldsSeen;
-            const oldValue = data[oldIndex];
-            if (
-              typeof oldValue === "string" &&
-              !(
-                field.classList.contains("service-price") &&
-                oldIndividualPrices.has(oldValue)
-              )
-            ) {
-              field.innerHTML = oldValue;
-            }
-          });
-        } else if (data.length < editableFields.length) {
-          editableFields.slice(0, menuStart).forEach((field, index) => {
-            if (typeof data[index] === "string") field.innerHTML = data[index];
-          });
-          if (typeof data[data.length - 1] === "string") {
-            editableFields[editableFields.length - 1].innerHTML =
-              data[data.length - 1];
-          }
-        } else {
+        if (Array.isArray(data)) {
+          const editableFields = [...page.querySelectorAll('[contenteditable="true"]')];
           editableFields.forEach((field, index) => {
             if (typeof data[index] === "string") field.innerHTML = data[index];
           });
+          enhanceEditablePage();
+          savePage();
+          return true;
         }
-        savePage();
-        return true;
+
+        return false;
       }
 
-      try {
-        const storedPage = JSON.parse(localStorage.getItem(storageKey));
-        if (storedPage) {
-          restorePage(storedPage);
-        } else {
-          restorePage(defaultPageData);
-        }
-      } catch {
-        restorePage(defaultPageData);
+      function makeEditable(element) {
+        element.querySelectorAll("h1, h2, h3, h4, p, ul, .tag").forEach((item) => {
+          if (!item.closest(".page-tools")) item.setAttribute("contenteditable", "true");
+        });
       }
 
-      let saveTimer;
-      document.addEventListener("input", (event) => {
-        if (!event.target.closest('[contenteditable="true"]')) return;
-        saveStatus.textContent = "Saving…";
-        window.clearTimeout(saveTimer);
-        saveTimer = window.setTimeout(savePage, 300);
-      });
-
-      const copyableBoxes = document.querySelectorAll(
-        ".card, .section, .addon-box, .service-panel",
-      );
-
-      copyableBoxes.forEach((box) => {
+      function addCopyButton(box) {
+        if (box.querySelector(":scope > .copy-button")) return;
         const button = document.createElement("button");
         button.type = "button";
         button.className = "copy-button";
@@ -1121,9 +974,7 @@
 
         button.addEventListener("click", async () => {
           const copy = box.cloneNode(true);
-          copy
-            .querySelectorAll(".copy-button")
-            .forEach((item) => item.remove());
+          copy.querySelectorAll(".copy-button, .delete-button").forEach((item) => item.remove());
           const text = copy.innerText.trim();
 
           try {
@@ -1146,6 +997,103 @@
         });
 
         box.prepend(button);
+      }
+
+      function addDeleteButton(box) {
+        if (box.querySelector(":scope > .delete-button")) return;
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "delete-button";
+        button.textContent = "Delete";
+        button.setAttribute("aria-label", "Delete this card");
+
+        button.addEventListener("click", () => {
+          const title = box.querySelector("h2, h3, h4")?.innerText?.trim() || "this card";
+          if (!window.confirm(`Delete ${title}?`)) return;
+          box.remove();
+          savePage();
+        });
+
+        box.prepend(button);
+      }
+
+      function enhanceEditablePage() {
+        page.querySelectorAll(".card, .section, .addon-box, .service-panel").forEach((box) => {
+          makeEditable(box);
+          addCopyButton(box);
+          addDeleteButton(box);
+        });
+      }
+
+      function addPlanCard() {
+        const grid = page.querySelector(".grid");
+        if (!grid) return;
+
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <h2 contenteditable="true">New Support Plan</h2>
+          <p class="price" contenteditable="true">$0/month<br><span class="annual">or $0/month when paid yearly</span></p>
+          <p class="hours" contenteditable="true">Up to 0 support hours monthly</p>
+          <p class="small-title" contenteditable="true">Includes:</p>
+          <ul contenteditable="true">
+            <li>New service item</li>
+            <li>New service item</li>
+          </ul>
+          <p class="small-title" contenteditable="true">Best for:</p>
+          <ul contenteditable="true">
+            <li>Describe who this plan is best for.</li>
+          </ul>
+        `;
+
+        grid.appendChild(card);
+        enhanceEditablePage();
+        card.scrollIntoView({ behavior: "smooth", block: "center" });
+        savePage();
+      }
+
+      function addServiceCard() {
+        const firstMenuGrid = page.querySelector(".service-menu .menu-grid");
+        if (!firstMenuGrid) return;
+
+        const card = document.createElement("article");
+        card.className = "service-panel";
+        card.innerHTML = `
+          <h4 contenteditable="true">New Service</h4>
+          <p class="service-price" contenteditable="true">$0 per item</p>
+          <p class="service-best" contenteditable="true">Best for describing what this service helps with.</p>
+          <ul contenteditable="true">
+            <li>New service detail</li>
+            <li>New service detail</li>
+          </ul>
+        `;
+
+        firstMenuGrid.appendChild(card);
+        enhanceEditablePage();
+        card.scrollIntoView({ behavior: "smooth", block: "center" });
+        savePage();
+      }
+
+      try {
+        const storedPage = JSON.parse(localStorage.getItem(storageKey));
+        if (storedPage) {
+          restorePage(storedPage);
+        } else {
+          enhanceEditablePage();
+          savePage();
+        }
+      } catch {
+        page.innerHTML = defaultPageHtml;
+        enhanceEditablePage();
+        savePage();
+      }
+
+      let saveTimer;
+      document.addEventListener("input", (event) => {
+        if (!event.target.closest('[contenteditable="true"]')) return;
+        setStatus("Saving…");
+        window.clearTimeout(saveTimer);
+        saveTimer = window.setTimeout(savePage, 300);
       });
 
       function downloadBlob(blob, filename) {
@@ -1156,6 +1104,9 @@
         window.setTimeout(() => URL.revokeObjectURL(link.href), 1000);
       }
 
+      document.getElementById("addPlanCard")?.addEventListener("click", addPlanCard);
+      document.getElementById("addServiceCard")?.addEventListener("click", addServiceCard);
+
       document.getElementById("exportData").addEventListener("click", () => {
         const blob = new Blob([JSON.stringify(getPageData(), null, 2)], {
           type: "application/json",
@@ -1164,8 +1115,11 @@
       });
 
       document.getElementById("resetPage").addEventListener("click", () => {
+        if (!window.confirm("Reset everything back to the original version?")) return;
         localStorage.removeItem(storageKey);
-        window.location.reload();
+        page.innerHTML = defaultPageHtml;
+        enhanceEditablePage();
+        savePage();
       });
 
       const dataFile = document.getElementById("dataFile");
@@ -1179,21 +1133,17 @@
 
         try {
           const data = JSON.parse(await file.text());
-          saveStatus.textContent = restorePage(data)
-            ? "Imported and saved"
-            : "Invalid data file";
+          setStatus(restorePage(data) ? "Imported and saved" : "Invalid data file");
         } catch {
-          saveStatus.textContent = "Invalid data file";
+          setStatus("Invalid data file");
         }
         dataFile.value = "";
       });
 
       async function exportImage(format) {
-        const target = document.querySelector(".page");
-        const clone = target.cloneNode(true);
-        clone
-          .querySelectorAll(".copy-button, .note")
-          .forEach((item) => item.remove());
+        const target = page;
+        const clone = cleanPageClone();
+        clone.querySelectorAll(".note").forEach((item) => item.remove());
         clone.querySelectorAll('[contenteditable="true"]').forEach((item) => {
           item.removeAttribute("contenteditable");
         });
@@ -1242,29 +1192,25 @@
         );
       }
 
-      document
-        .getElementById("exportPng")
-        .addEventListener("click", async () => {
-          saveStatus.textContent = "Creating PNG…";
-          try {
-            await exportImage("png");
-            saveStatus.textContent = "PNG exported";
-          } catch {
-            saveStatus.textContent = "PNG export failed";
-          }
-        });
+      document.getElementById("exportPng").addEventListener("click", async () => {
+        setStatus("Creating PNG…");
+        try {
+          await exportImage("png");
+          setStatus("PNG exported");
+        } catch {
+          setStatus("PNG export failed");
+        }
+      });
 
-      document
-        .getElementById("exportJpeg")
-        .addEventListener("click", async () => {
-          saveStatus.textContent = "Creating JPEG…";
-          try {
-            await exportImage("jpeg");
-            saveStatus.textContent = "JPEG exported";
-          } catch {
-            saveStatus.textContent = "JPEG export failed";
-          }
-        });
+      document.getElementById("exportJpeg").addEventListener("click", async () => {
+        setStatus("Creating JPEG…");
+        try {
+          await exportImage("jpeg");
+          setStatus("JPEG exported");
+        } catch {
+          setStatus("JPEG export failed");
+        }
+      });
     </script>
-  </body>
+</body>
 </html>
